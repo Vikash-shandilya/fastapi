@@ -1,0 +1,14 @@
+so i will write some notes here 
+
+why we put response_model in our decorator parameter
+    suppose we want to output only title and content and if we dont use response_model then
+    id will output everything whaterver user provide.so we define a class in schemas.py 
+    so that we can validate our output acoording to our need in sort term we can response 
+    whaterver the fuck we want.and we also put config class under our response class becoz 
+    the output that get return was in orm model and response model only knows dict so he 
+    doesnt underustand anything so we put orm_mode=True so that our output get converted into 
+    dict type and then get printed.
+
+
+explain this line--
+get2this=db.query(models.Post,func.count(models.Vote.post_id).label('votes')).join(models.Vote,models.Post.id==models.Vote.post_id,isouter=True).group_by(models.Post.id).filter(models.Post.title.contains(search)).limit(limit).offset(skip).all()
