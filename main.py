@@ -58,7 +58,9 @@ app.include_router(auth.router)
 app.include_router(votes.router)
 
 
-
+@app.get('/')
+def root():
+    return {'result':'hello world'}
 
 
 
