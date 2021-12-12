@@ -6,14 +6,15 @@ from fastapi import Depends,HTTPException,status
 from sqlalchemy.orm import Session
 
 from app import models
+from app.config import Settings
 from . import orm
 
 
 oauth2_scheme=OAuth2PasswordBearer(tokenUrl='login')
 
-SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 100
+SECRET_KEY = Settings.database_secret_key
+ALGORITHM = Settings.database_algorithm
+ACCESS_TOKEN_EXPIRE_MINUTES = Settings.database_expire_time
 
 def myconverter(o):#lookup this later
     if isinstance(o,datetime):
