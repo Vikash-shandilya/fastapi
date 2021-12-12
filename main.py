@@ -9,9 +9,9 @@ from fastapi import FastAPI
 
 
 from app.router import auth 
-from . import models,votes
-from .orm import engine
-from .router import posts,users,auth
+from app import models,votes
+from app.orm import engine
+from app.router import posts,users,auth
 
 
 
