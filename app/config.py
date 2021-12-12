@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     database_password:str="Vikash123"
     database_hostname:str="localhost"
     database_name:str="fastapi"
-    database_port:str="5432"
+    database_port:str="5433"
 
     class Config:
         env_file=".env"
