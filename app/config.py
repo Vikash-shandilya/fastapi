@@ -12,7 +12,6 @@ class Settings(BaseSettings):
     database_name:str="fastapi"
     database_port:str="5432"
 
-    class Config:
-        env_file=".env"
+    
 
 settings=Settings()
